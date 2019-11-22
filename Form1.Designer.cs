@@ -71,6 +71,7 @@
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
             this.newGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newGameToolStripMenuItem.Text = "New Game";
+            this.newGameToolStripMenuItem.Click += new System.EventHandler(this.NewGame_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -90,7 +91,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutMenuItem);
             // 
@@ -103,6 +104,7 @@
             this.A1.Size = new System.Drawing.Size(75, 75);
             this.A1.TabIndex = 1;
             this.A1.UseVisualStyleBackColor = true;
+            this.A1.Click += new System.EventHandler(this.Button_click);
             // 
             // A2
             // 
@@ -113,6 +115,7 @@
             this.A2.Size = new System.Drawing.Size(75, 75);
             this.A2.TabIndex = 1;
             this.A2.UseVisualStyleBackColor = true;
+            this.A2.Click += new System.EventHandler(this.Button_click);
             // 
             // A3
             // 
@@ -123,6 +126,7 @@
             this.A3.Size = new System.Drawing.Size(75, 75);
             this.A3.TabIndex = 1;
             this.A3.UseVisualStyleBackColor = true;
+            this.A3.Click += new System.EventHandler(this.Button_click);
             // 
             // B1
             // 
@@ -133,6 +137,7 @@
             this.B1.Size = new System.Drawing.Size(75, 75);
             this.B1.TabIndex = 1;
             this.B1.UseVisualStyleBackColor = true;
+            this.B1.Click += new System.EventHandler(this.Button_click);
             // 
             // B2
             // 
@@ -143,6 +148,7 @@
             this.B2.Size = new System.Drawing.Size(75, 75);
             this.B2.TabIndex = 1;
             this.B2.UseVisualStyleBackColor = true;
+            this.B2.Click += new System.EventHandler(this.Button_click);
             // 
             // B3
             // 
@@ -153,6 +159,7 @@
             this.B3.Size = new System.Drawing.Size(75, 75);
             this.B3.TabIndex = 1;
             this.B3.UseVisualStyleBackColor = true;
+            this.B3.Click += new System.EventHandler(this.Button_click);
             // 
             // C1
             // 
@@ -163,6 +170,7 @@
             this.C1.Size = new System.Drawing.Size(75, 75);
             this.C1.TabIndex = 1;
             this.C1.UseVisualStyleBackColor = true;
+            this.C1.Click += new System.EventHandler(this.Button_click);
             // 
             // C2
             // 
@@ -173,6 +181,7 @@
             this.C2.Size = new System.Drawing.Size(75, 75);
             this.C2.TabIndex = 1;
             this.C2.UseVisualStyleBackColor = true;
+            this.C2.Click += new System.EventHandler(this.Button_click);
             // 
             // C3
             // 
@@ -183,6 +192,7 @@
             this.C3.Size = new System.Drawing.Size(75, 75);
             this.C3.TabIndex = 1;
             this.C3.UseVisualStyleBackColor = true;
+            this.C3.Click += new System.EventHandler(this.Button_click);
             // 
             // Form1
             // 
