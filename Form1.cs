@@ -6,6 +6,7 @@ namespace TicTacToe_TheGame
 {
     public partial class Form1 : Form
     {
+        int x_win_count = 0, o_win_count = 0, draw_count = 0;
         bool turn = true; //ehen true - X turn, false - 0 turn
         int turnCount = 0;
 
@@ -32,14 +33,45 @@ namespace TicTacToe_TheGame
                     button.Enabled = false;
 
                 if (turn) //выводим победителя
+                {
                     MessageBox.Show("\"X\" Win!", "Yea!!");
+                    X_WinCount_label.Text = $"X wins = {++x_win_count}";
+                }
                 else
+                {
                     MessageBox.Show("\"O\" Win!", "Yea!");
+                    O_WinCount_label.Text = $"O wins = {++o_win_count}"; 
+                }
+
                 return;
             }
-            if (turnCount == 9) MessageBox.Show("Draw!", "Fuck"); //ничья
+            if (turnCount == 9)
+            {
+                MessageBox.Show("Draw!", "Ouch!"); //ничья
+                Draw_Count_label.Text = $"Draws = {++draw_count}";
+            }
             turn = !turn; //передача хода
         }
+        private void Mouse_enter(object sender, EventArgs e) //показываем чей ход Х или О на кнопке
+        {
+            Button b = (Button)sender;
+            if (!b.Enabled) return; //если кнопка уже задействованная то ничего не делаем
+            b.Text = turn ? "X" : "O";
+        }
+        private void Mouse_leave(object sender, EventArgs e) //при уходе мыши возвращаем все обратно
+        {
+            Button b = (Button)sender;
+            if (b.Enabled) b.Text = "";
+        }
+        private void Reset_win_counts(object sender, EventArgs e) //сброс счета
+        {
+            x_win_count = o_win_count = draw_count = 0;
+            Draw_Count_label.Text = $"Draws = {draw_count}";
+            X_WinCount_label.Text = $"X wins = {x_win_count}";
+            O_WinCount_label.Text = $"O wins = {o_win_count}";
+            NewGame_Click(null, null);
+        }
+
         private bool CheckForWinner()
         {
             //проверка горизонтальных рядов

@@ -32,6 +32,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restWinCountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,7 +45,12 @@
             this.C1 = new System.Windows.Forms.Button();
             this.C2 = new System.Windows.Forms.Button();
             this.C3 = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.O_WinCount_label = new System.Windows.Forms.ToolStripStatusLabel();
+            this.X_WinCount_label = new System.Windows.Forms.ToolStripStatusLabel();
+            this.Draw_Count_label = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -61,6 +67,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newGameToolStripMenuItem,
+            this.restWinCountsToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -72,6 +79,13 @@
             this.newGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newGameToolStripMenuItem.Text = "New Game";
             this.newGameToolStripMenuItem.Click += new System.EventHandler(this.NewGame_Click);
+            // 
+            // restWinCountsToolStripMenuItem
+            // 
+            this.restWinCountsToolStripMenuItem.Name = "restWinCountsToolStripMenuItem";
+            this.restWinCountsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.restWinCountsToolStripMenuItem.Text = "Reset win counts";
+            this.restWinCountsToolStripMenuItem.Click += new System.EventHandler(this.Reset_win_counts);
             // 
             // exitToolStripMenuItem
             // 
@@ -105,6 +119,8 @@
             this.A1.TabIndex = 1;
             this.A1.UseVisualStyleBackColor = true;
             this.A1.Click += new System.EventHandler(this.Button_click);
+            this.A1.MouseEnter += new System.EventHandler(this.Mouse_enter);
+            this.A1.MouseLeave += new System.EventHandler(this.Mouse_leave);
             // 
             // A2
             // 
@@ -116,6 +132,8 @@
             this.A2.TabIndex = 1;
             this.A2.UseVisualStyleBackColor = true;
             this.A2.Click += new System.EventHandler(this.Button_click);
+            this.A2.MouseEnter += new System.EventHandler(this.Mouse_enter);
+            this.A2.MouseLeave += new System.EventHandler(this.Mouse_leave);
             // 
             // A3
             // 
@@ -127,6 +145,8 @@
             this.A3.TabIndex = 1;
             this.A3.UseVisualStyleBackColor = true;
             this.A3.Click += new System.EventHandler(this.Button_click);
+            this.A3.MouseEnter += new System.EventHandler(this.Mouse_enter);
+            this.A3.MouseLeave += new System.EventHandler(this.Mouse_leave);
             // 
             // B1
             // 
@@ -138,6 +158,8 @@
             this.B1.TabIndex = 1;
             this.B1.UseVisualStyleBackColor = true;
             this.B1.Click += new System.EventHandler(this.Button_click);
+            this.B1.MouseEnter += new System.EventHandler(this.Mouse_enter);
+            this.B1.MouseLeave += new System.EventHandler(this.Mouse_leave);
             // 
             // B2
             // 
@@ -149,6 +171,8 @@
             this.B2.TabIndex = 1;
             this.B2.UseVisualStyleBackColor = true;
             this.B2.Click += new System.EventHandler(this.Button_click);
+            this.B2.MouseEnter += new System.EventHandler(this.Mouse_enter);
+            this.B2.MouseLeave += new System.EventHandler(this.Mouse_leave);
             // 
             // B3
             // 
@@ -160,6 +184,8 @@
             this.B3.TabIndex = 1;
             this.B3.UseVisualStyleBackColor = true;
             this.B3.Click += new System.EventHandler(this.Button_click);
+            this.B3.MouseEnter += new System.EventHandler(this.Mouse_enter);
+            this.B3.MouseLeave += new System.EventHandler(this.Mouse_leave);
             // 
             // C1
             // 
@@ -171,6 +197,8 @@
             this.C1.TabIndex = 1;
             this.C1.UseVisualStyleBackColor = true;
             this.C1.Click += new System.EventHandler(this.Button_click);
+            this.C1.MouseEnter += new System.EventHandler(this.Mouse_enter);
+            this.C1.MouseLeave += new System.EventHandler(this.Mouse_leave);
             // 
             // C2
             // 
@@ -182,6 +210,8 @@
             this.C2.TabIndex = 1;
             this.C2.UseVisualStyleBackColor = true;
             this.C2.Click += new System.EventHandler(this.Button_click);
+            this.C2.MouseEnter += new System.EventHandler(this.Mouse_enter);
+            this.C2.MouseLeave += new System.EventHandler(this.Mouse_leave);
             // 
             // C3
             // 
@@ -193,12 +223,48 @@
             this.C3.TabIndex = 1;
             this.C3.UseVisualStyleBackColor = true;
             this.C3.Click += new System.EventHandler(this.Button_click);
+            this.C3.MouseEnter += new System.EventHandler(this.Mouse_enter);
+            this.C3.MouseLeave += new System.EventHandler(this.Mouse_leave);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.O_WinCount_label,
+            this.X_WinCount_label,
+            this.Draw_Count_label});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 292);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(254, 22);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // O_WinCount_label
+            // 
+            this.O_WinCount_label.Name = "O_WinCount_label";
+            this.O_WinCount_label.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.O_WinCount_label.Size = new System.Drawing.Size(73, 17);
+            this.O_WinCount_label.Text = "O wins = 0";
+            // 
+            // X_WinCount_label
+            // 
+            this.X_WinCount_label.Name = "X_WinCount_label";
+            this.X_WinCount_label.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.X_WinCount_label.Size = new System.Drawing.Size(71, 17);
+            this.X_WinCount_label.Text = "X wins = 0";
+            // 
+            // Draw_Count_label
+            // 
+            this.Draw_Count_label.Name = "Draw_Count_label";
+            this.Draw_Count_label.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.Draw_Count_label.Size = new System.Drawing.Size(69, 17);
+            this.Draw_Count_label.Text = "Draws = 0";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(254, 280);
+            this.ClientSize = new System.Drawing.Size(254, 314);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.C3);
             this.Controls.Add(this.C2);
             this.Controls.Add(this.B3);
@@ -217,6 +283,8 @@
             this.Text = " Tic Tac Toe";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,6 +307,11 @@
         private System.Windows.Forms.Button C1;
         private System.Windows.Forms.Button C2;
         private System.Windows.Forms.Button C3;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel O_WinCount_label;
+        private System.Windows.Forms.ToolStripStatusLabel X_WinCount_label;
+        private System.Windows.Forms.ToolStripStatusLabel Draw_Count_label;
+        private System.Windows.Forms.ToolStripMenuItem restWinCountsToolStripMenuItem;
     }
 }
 
