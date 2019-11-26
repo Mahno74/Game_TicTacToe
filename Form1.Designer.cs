@@ -46,11 +46,9 @@
             this.C2 = new System.Windows.Forms.Button();
             this.C3 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.O_WinCount_label = new System.Windows.Forms.ToolStripStatusLabel();
+            this.X_WinCount_label = new System.Windows.Forms.ToolStripStatusLabel();
             this.Draw_Count_label = new System.Windows.Forms.ToolStripStatusLabel();
-            this.p1_name = new System.Windows.Forms.TextBox();
-            this.p1_score = new System.Windows.Forms.Label();
-            this.p2_name = new System.Windows.Forms.TextBox();
-            this.p2_score = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -231,12 +229,28 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.X_WinCount_label,
+            this.O_WinCount_label,
             this.Draw_Count_label});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 334);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 292);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(254, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // O_WinCount_label
+            // 
+            this.O_WinCount_label.Name = "O_WinCount_label";
+            this.O_WinCount_label.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.O_WinCount_label.Size = new System.Drawing.Size(73, 17);
+            this.O_WinCount_label.Text = "O wins = 0";
+            // 
+            // X_WinCount_label
+            // 
+            this.X_WinCount_label.Name = "X_WinCount_label";
+            this.X_WinCount_label.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.X_WinCount_label.Size = new System.Drawing.Size(71, 17);
+            this.X_WinCount_label.Text = "X wins = 0";
             // 
             // Draw_Count_label
             // 
@@ -245,55 +259,11 @@
             this.Draw_Count_label.Size = new System.Drawing.Size(69, 17);
             this.Draw_Count_label.Text = "Draws = 0";
             // 
-            // p1_name
-            // 
-            this.p1_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.p1_name.Location = new System.Drawing.Point(4, 278);
-            this.p1_name.Name = "p1_name";
-            this.p1_name.Size = new System.Drawing.Size(102, 20);
-            this.p1_name.TabIndex = 3;
-            this.p1_name.Text = "Player1";
-            this.p1_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // p1_score
-            // 
-            this.p1_score.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.p1_score.Location = new System.Drawing.Point(32, 301);
-            this.p1_score.Name = "p1_score";
-            this.p1_score.Size = new System.Drawing.Size(46, 23);
-            this.p1_score.TabIndex = 4;
-            this.p1_score.Text = "0";
-            this.p1_score.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // p2_name
-            // 
-            this.p2_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.p2_name.Location = new System.Drawing.Point(144, 278);
-            this.p2_name.Name = "p2_name";
-            this.p2_name.Size = new System.Drawing.Size(102, 20);
-            this.p2_name.TabIndex = 3;
-            this.p2_name.Text = "Player2";
-            this.p2_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // p2_score
-            // 
-            this.p2_score.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.p2_score.Location = new System.Drawing.Point(172, 301);
-            this.p2_score.Name = "p2_score";
-            this.p2_score.Size = new System.Drawing.Size(46, 23);
-            this.p2_score.TabIndex = 4;
-            this.p2_score.Text = "0";
-            this.p2_score.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(254, 356);
-            this.Controls.Add(this.p2_score);
-            this.Controls.Add(this.p1_score);
-            this.Controls.Add(this.p2_name);
-            this.Controls.Add(this.p1_name);
+            this.ClientSize = new System.Drawing.Size(254, 314);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.C3);
             this.Controls.Add(this.C2);
@@ -311,6 +281,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = " Tic Tac Toe";
+            this.Load += new System.EventHandler(this.Form_load_and_set_players_name);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -338,12 +309,10 @@
         private System.Windows.Forms.Button C2;
         private System.Windows.Forms.Button C3;
         private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel O_WinCount_label;
+        private System.Windows.Forms.ToolStripStatusLabel X_WinCount_label;
         private System.Windows.Forms.ToolStripStatusLabel Draw_Count_label;
         private System.Windows.Forms.ToolStripMenuItem restWinCountsToolStripMenuItem;
-        private System.Windows.Forms.TextBox p1_name;
-        private System.Windows.Forms.Label p1_score;
-        private System.Windows.Forms.TextBox p2_name;
-        private System.Windows.Forms.Label p2_score;
     }
 }
 
