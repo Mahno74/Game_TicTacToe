@@ -76,21 +76,21 @@
             // newGameToolStripMenuItem
             // 
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.newGameToolStripMenuItem.Text = "New Game";
             this.newGameToolStripMenuItem.Click += new System.EventHandler(this.NewGame_Click);
             // 
             // restWinCountsToolStripMenuItem
             // 
             this.restWinCountsToolStripMenuItem.Name = "restWinCountsToolStripMenuItem";
-            this.restWinCountsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.restWinCountsToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.restWinCountsToolStripMenuItem.Text = "Reset win counts";
             this.restWinCountsToolStripMenuItem.Click += new System.EventHandler(this.Reset_win_counts);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitMenuItem);
             // 
@@ -229,8 +229,8 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.O_WinCount_label,
             this.X_WinCount_label,
+            this.O_WinCount_label,
             this.Draw_Count_label});
             this.statusStrip1.Location = new System.Drawing.Point(0, 292);
             this.statusStrip1.Name = "statusStrip1";
@@ -281,6 +281,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = " Tic Tac Toe";
+            this.Load += new System.EventHandler(this.Form_load_and_set_players_name);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
