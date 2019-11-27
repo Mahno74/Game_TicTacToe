@@ -6,6 +6,7 @@ namespace TicTacToe_TheGame
 {
     public partial class Form1 : Form
     {
+        static string player1_name, player2_name;
         int x_win_count = 0, o_win_count = 0, draw_count = 0;
         bool turn = true; //ehen true - X turn, false - 0 turn
         bool against_computer = false;
@@ -19,7 +20,9 @@ namespace TicTacToe_TheGame
 
         private void AboutMenuItem(object sender, EventArgs e) => MessageBox.Show("By SlavY Yurasov 2019", "Tic-Tac-Toe About");
         private void ExitMenuItem(object sender, EventArgs e) => Application.Exit();
+
         private void Button_click(object sender, EventArgs e) //clicking on any button in the game field
+
         {
             turnCount++;
             Button b = (Button)sender;
@@ -36,13 +39,13 @@ namespace TicTacToe_TheGame
 
                 if (turn) //show the winner
                 {
-                    MessageBox.Show($"{p1_name.Text} Win!", "Yea!!");
-                    p1_score.Text = (++x_win_count).ToString();
+                    MessageBox.Show($"{player1_name} Win!", "Yea!!");
+                    X_WinCount_label.Text = $"{player1_name} wins = {++x_win_count}";
                 }
                 else
                 {
-                    MessageBox.Show($"{p2_name.Text} Win!", "Yea!");
-                    p2_score.Text = (++o_win_count).ToString();
+                    MessageBox.Show($"{player2_name} Win!", "Yea!");
+                    O_WinCount_label.Text = $"{player2_name} wins = {++o_win_count}";
                 }
 
                 return;
