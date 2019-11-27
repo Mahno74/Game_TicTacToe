@@ -34,6 +34,9 @@
             this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restWinCountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.player1_select = new System.Windows.Forms.ToolStripMenuItem();
+            this.player2_select = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.A1 = new System.Windows.Forms.Button();
@@ -57,6 +60,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
+            this.optionsToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -93,6 +97,31 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitMenuItem);
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.player1_select,
+            this.player2_select});
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.optionsToolStripMenuItem.Text = "Options";
+            // 
+            // player1_select
+            // 
+            this.player1_select.CheckOnClick = true;
+            this.player1_select.Name = "player1_select";
+            this.player1_select.Size = new System.Drawing.Size(180, 22);
+            this.player1_select.Text = "1 Player";
+            this.player1_select.Click += new System.EventHandler(this.Player1_select_Click);
+            // 
+            // player2_select
+            // 
+            this.player2_select.CheckOnClick = true;
+            this.player2_select.Name = "player2_select";
+            this.player2_select.Size = new System.Drawing.Size(180, 22);
+            this.player2_select.Text = "2 Player";
+            this.player2_select.Click += new System.EventHandler(this.Player2_select_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -313,6 +342,14 @@
         private System.Windows.Forms.ToolStripStatusLabel X_WinCount_label;
         private System.Windows.Forms.ToolStripStatusLabel Draw_Count_label;
         private System.Windows.Forms.ToolStripMenuItem restWinCountsToolStripMenuItem;
+        private System.Windows.Forms.TextBox p1_name;
+        private System.Windows.Forms.Label p1_score;
+        private System.Windows.Forms.TextBox p2_name;
+        private System.Windows.Forms.Label p2_score;
+        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem player1_select;
+        private System.Windows.Forms.ToolStripMenuItem player2_select;
+
     }
 }
 
